@@ -1,0 +1,99 @@
+body {
+	background: url("../../public/images/site_background.png") repeat scroll 0 0 transparent;
+	color: #666666;
+	background-color: #fff;
+	margin: 0px;
+	padding: 0px;
+	font: normal 14px "Lucida Grande", arial, tahoma, sans-serif;
+}
+
+img {
+	border: 0px;
+}
+
+a {color: #8BB903; text-decoration: none;}
+a:hover {color: #B0DD28;}
+
+h1 {
+	margin-bottom: 0px;
+}
+
+/* header
+----------------------------------------------- */
+#header {
+	background-image: url("../../public/images/head-green.gif");
+	background-repeat: repeat-x;
+	height: 100px;
+	padding: 1px;
+	padding-left: 50px;
+	margin-bottom: 10px;
+}
+#header h1 {
+	font-size: 50px;
+	margin-top: 5px;
+}
+#header h1 a, #cabecera h1 a:hover { 
+	color: #fff;
+	text-decoration: none;
+}
+
+#header .logo {
+	color: #fff;
+	float: left;
+}
+
+#header .navigation {
+	float: right;
+	margin-right: 50px;
+	margin-top: 55px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#header .navigation a {
+	color: #fff;
+	text-decoration: none;
+	margin-left: 10px;
+}
+#header .navigation	a:hover {
+	color: #5F9300;
+	text-decoration: underline;
+}
+
+
+
+/* sidebar
+----------------------------------------------- */
+#sidebar {
+	float: left;
+	margin-left: 50px;
+	width: 250px;
+	padding-right: 50px;
+	height: 100%;
+}
+
+#sidebar .about_me {
+	border-bottom: 1px dotted #CCCCCC;
+	padding-bottom: 10px;
+}
+
+
+/* content
+----------------------------------------------- */
+#content {
+	padding-right: 30px;
+	margin-left:350px;
+}
+
+
+/* footer
+----------------------------------------------- */
+#footer {
+	clear: both;
+	border-top:1px dotted #CCCCCC;
+	color:#333333;
+	margin-left: 50px;
+	padding-bottom: 30px;
+	padding-top: 10px;
+	margin-top: 30px;
+}
