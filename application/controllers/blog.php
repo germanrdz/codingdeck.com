@@ -5,7 +5,7 @@ class Blog extends Controller {
 	function Blog() {
 		parent::Controller();
 		
-		$this->load->scaffolding('entries');
+		//$this->load->scaffolding('entries');
 		$this->load->model('entries');
 	}
 	
