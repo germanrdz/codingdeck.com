@@ -13,19 +13,13 @@
 		
 		function index()
 		{
-			// load main header
-			$include["stylesheets"] = array();
-			$include["scripts"] = array();
-			$this->load->view('header', $include);
+
 			
 			// bussines logic
-			$view_data['model'] = $this->entries->selectLast20();
+			$view_data['model'] = $this->entries->selectAll();
 			
 			// load view
-			//$this->load->view('blog/index', $view_data);
-		
-			// load footer
-			$this->load->view('footer');
+			$this->load->view('panel/index', $view_data);
 		}
 	
 	}
