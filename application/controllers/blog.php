@@ -35,12 +35,12 @@
 		
 		function about()
 		{
-			
+			echo "about me";
 		}
 		
 		function contact()
 		{
-			echo "";
+			echo "contact me";
 		}
 
 	}
