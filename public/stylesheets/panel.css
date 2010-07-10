@@ -1,0 +1,29 @@
+#content {
+	margin-left: 100px;
+}
+
+#panel .new_entry {
+	font-size: 25px;
+	margin-left: 480px;
+	font-weight: bold;
+}
+
+#panel #entries_list {
+	width: 700px;
+	margin-top: 20px;
+}
+
+#panel #entries_list a {
+	text-decoration: underline;
+}
+
+#panel #entries_list td {
+	padding: 5px;
+	border-bottom: 1px dotted #CCCCCC;
+}
+
+#panel #entries_list .header {
+	font-weight: bold;
+	background-color: #8BB903;
+	color: #FFF;
+}

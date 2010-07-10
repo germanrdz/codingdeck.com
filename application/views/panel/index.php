@@ -6,6 +6,7 @@
 		<meta name="robots" content="all" /> 
 
 		<?= link_tag("public/stylesheets/master.css"); ?>
+		<?= link_tag("public/stylesheets/panel.css"); ?>
 
 		<title>Coding Deck : Panel</title> 
 	</head>
@@ -29,10 +30,42 @@
 		</div>
 		
 		<div id="content">
-			<h1>Panel</h1>
-		
-		
-		
+			<div id="panel">
+				<h1>Panel</h1>
+	
+				<div class="new_entry">
+					<a href="#">Post a new entry</a>
+				</div>
+			
+				<table id="entries_list">
+					<thead class="header">
+						<td>Id</td>
+						<td>Title</td>
+						<td>Author</td>
+						<td>Last Updated</td>
+						<td>Actions</td>
+					</thead>
+					
+					<? foreach($model as $entry): ?>
+						<tr>
+							<td><?= $entry->Id ?></td>
+							<td><?= anchor("blog/comments/" . $entry->Id, $entry->Title); ?></td>
+							<td><?= $entry->Author ?></td>
+							<td><?= $entry->LastUpdated ?></td>
+							<td>
+								<?= anchor("panel/edit/" . $entry->Id, "edit"); ?>
+								<?= anchor("panel/delete/" . $entry->Id, "delete",
+									array(
+										"onclick" => "javascript:return confirm('Are you sure you want to delete this post?')", 
+										"style" => "padding-left: 15px;")
+									);
+								?>
+							</td>
+						</tr>
+					<? endforeach; ?>
+				
+				</table>
+			</div>
 		</div>
 	
 	</body>

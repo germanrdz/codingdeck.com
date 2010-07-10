@@ -6,10 +6,12 @@ class entries extends Model {
 		$data = array();
 		
 		$this->db->order_by("Id", "desc"); 
-		$query = $this->db->get('entries', 20);
+		$query = $this->db->get('entries');
 		
-		if ($query->num_rows() > 0) {
-			foreach($query->result() as $row) {
+		if ($query->num_rows() > 0)
+		{
+			foreach($query->result() as $row)
+			{
 				$data[] = $row;
 			}
 		}
@@ -23,10 +25,12 @@ class entries extends Model {
 		$data = array();
 		
 		$this->db->order_by("Id", "desc"); 
-		$query = $this->db->get('entries');
+		$query = $this->db->get('entries', 20);
 		
-		if ($query->num_rows() > 0) {
-			foreach($query->result() as $row) {
+		if ($query->num_rows() > 0)
+		{
+			foreach($query->result() as $row)
+			{
 				$data[] = $row;
 			}
 		}
@@ -34,6 +38,26 @@ class entries extends Model {
 		$query->free_result();
 		
 		return $data;		
+	}
+	
+	function getList() {
+		$data = array();
+		
+		$this->db->select("Id, Title, Author, LastUpdated");
+		$this->db->order_by("Id", "desc");
+		$query = $this->db->get("entries");
+		
+		if ($query->num_rows() > 0)
+		{
+			foreach($query->result() as $row)
+			{
+				$data[] = $row;
+			}
+		}
+		
+		$query->free_result();
+		
+		return $data;
 	}
 
 }
