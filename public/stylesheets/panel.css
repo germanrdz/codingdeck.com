@@ -45,3 +45,12 @@
 	padding: 3px;
 	font: normal 20px "Lucida Grande", arial, tahoma, sans-serif;
 }
+
+#panel #form .submit {
+	text-align: center;
+	width: 900px;
+}
+
+#panel #form .submit input {
+	width: 200px;
+}

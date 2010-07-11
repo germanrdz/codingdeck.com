@@ -52,6 +52,9 @@
 							<?= form_label('Body','Body'); ?><br />
 							<?= form_textarea(array('name' => 'Body', 'rows' => '12', 'cols' => '70')); ?>
 						</p>
+						<p class="submit">
+							<?= form_submit("Submit", "Submit"); ?>
+						</p>
 					<?= form_close(); ?>
 				</div>
 			
