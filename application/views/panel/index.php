@@ -36,27 +36,41 @@
 			<div id="panel">
 				<h1>Panel</h1>
 	
+				<? if($validation) { echo '<div id="isValid">'; } ?>
+	
 				<div class="new_entry">
 					<a href="javascript:;" id="new_entry_link">Post a new entry</a>
 				</div>
-			
+						
 				<div id="form">
+					<? if(!$validation) { ?>
+						<div class="error">
+							<?= validation_errors(); ?>
+						</div>
+					<? } ?>
+					
 					<?= form_open('panel/create'); ?>
 					<?= form_hidden('Author', 'German Rodriguez'); ?>
 					
 						<p>
 							<?= form_label('Title','Title'); ?><br/>
-							<?= form_input("Title"); ?>
+							<?= form_input("Title", set_value("Title")); ?>
 						</p>
 						<p>
 							<?= form_label('Body','Body'); ?><br />
-							<?= form_textarea(array('name' => 'Body', 'rows' => '12', 'cols' => '70')); ?>
+							<?= form_textarea(array('name' => 'Body', 'rows' => '12', 'cols' => '70'), set_value("Body")); ?>
 						</p>
 						<p class="submit">
 							<?= form_submit("Submit", "Submit"); ?>
 						</p>
 					<?= form_close(); ?>
 				</div>
+			
+				<? if($success == 1) { ?>
+					<div class="success">
+						New entry was successfully saved! 
+					</div>
+				<? } ?>
 			
 				<table id="entries_list">
 					<thead class="header">

@@ -54,3 +54,12 @@
 #panel #form .submit input {
 	width: 200px;
 }
+
+#panel .error, #panel .success {
+	font-size: 12px;
+	width: 835px;
+}
+
+#panel .error p {
+	margin: 0px;
+}

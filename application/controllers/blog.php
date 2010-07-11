@@ -15,7 +15,7 @@
 		{
 			// load main header
 			$include["stylesheets"] = array("blog", "shCore", "shThemeDefault");
-			$include["scripts"] = array("shCore", "shBrushCSharp");
+			$include["scripts"] = array("shCore", "shBrushCSharp", "shBrushJScript");
 			$this->load->view('header', $include);
 			
 			// bussines logic
