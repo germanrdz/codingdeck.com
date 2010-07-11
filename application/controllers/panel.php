@@ -9,6 +9,7 @@
 			
 			//$this->load->scaffolding('entries');
 			$this->load->model('entries');
+			$this->load->helper('form');
 		}
 		
 		function index()

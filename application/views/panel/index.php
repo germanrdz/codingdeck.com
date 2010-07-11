@@ -8,6 +8,9 @@
 		<?= link_tag("public/stylesheets/master.css"); ?>
 		<?= link_tag("public/stylesheets/panel.css"); ?>
 
+		<script src="public/scripts/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="public/scripts/panel.js" type="text/javascript" charset="utf-8"></script>
+
 		<title>Coding Deck : Panel</title> 
 	</head>
 	<body>
@@ -34,7 +37,22 @@
 				<h1>Panel</h1>
 	
 				<div class="new_entry">
-					<a href="#">Post a new entry</a>
+					<a href="javascript:;" id="new_entry_link">Post a new entry</a>
+				</div>
+			
+				<div id="form">
+					<?= form_open('panel/create'); ?>
+					<?= form_hidden('Author', 'German Rodriguez'); ?>
+					
+						<p>
+							<?= form_label('Title','Title'); ?><br/>
+							<?= form_input("Title"); ?>
+						</p>
+						<p>
+							<?= form_label('Body','Body'); ?><br />
+							<?= form_textarea(array('name' => 'Body', 'rows' => '12', 'cols' => '70')); ?>
+						</p>
+					<?= form_close(); ?>
 				</div>
 			
 				<table id="entries_list">
