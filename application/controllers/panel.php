@@ -40,6 +40,7 @@
 			if ($validation)
 			{
 				// save into database
+				/*
 				date_default_timezone_set('America/Hermosillo');
 				$data["Title"] = $_POST["Title"];
 				$data["Body"] = $_POST["Body"];
@@ -48,9 +49,17 @@
 				$data["Author"] =  $_POST["Author"];
 				
 				$this->db->insert("entries", $data);
+				*/
 				
-				// redirect to index and send success param (1)
-				redirect('//panel/index/1', 'refresh');
+				if ($this->entries->saveEntry()) {
+					// redirect to index and send success param (1)
+					redirect('//panel/index/1', 'refresh');
+				}
+				else {
+					$view_data["success"] = 0;
+					$this->load->view('panel/index', $view_data);
+				}
+				
 			}
 			else
 			{
