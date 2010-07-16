@@ -11,6 +11,8 @@
 			$this->load->model('entries');
 			$this->load->helper('form');
 			$this->load->library('form_validation');
+			$this->load->helper('date');
+			
 		}
 		
 		function index($success = 0)
@@ -39,17 +41,6 @@
 			// if data valid save
 			if ($validation)
 			{
-				// save into database
-				/*
-				date_default_timezone_set('America/Hermosillo');
-				$data["Title"] = $_POST["Title"];
-				$data["Body"] = $_POST["Body"];
-				$data["CreationDate"] = date("m/d/Y"); 
-				$data["LastUpdated"] = date("m/d/Y");
-				$data["Author"] =  $_POST["Author"];
-				
-				$this->db->insert("entries", $data);
-				*/
 				
 				if ($this->entries->saveEntry()) {
 					// redirect to index and send success param (1)

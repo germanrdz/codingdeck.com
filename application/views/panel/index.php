@@ -86,7 +86,7 @@
 							<td><?= $entry->Id ?></td>
 							<td><?= anchor("blog/comments/" . $entry->Id, $entry->Title); ?></td>
 							<td><?= $entry->Author ?></td>
-							<td><?= $entry->LastUpdated ?></td>
+							<td><?= unix_to_human($entry->LastUpdated); ?></td>
 							<td>
 								<?= anchor("panel/edit/" . $entry->Id, "edit"); ?>
 								<?= anchor("panel/delete/" . $entry->Id, "delete",
