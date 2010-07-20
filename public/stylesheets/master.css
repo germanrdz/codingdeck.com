@@ -77,6 +77,22 @@ h1 {
 	padding-bottom: 10px;
 }
 
+#lastfmrecords {
+	width: 300px;
+	padding: 0;
+	margin: 0;
+}
+#lastfmrecords ol { padding: 0px;}
+#lastfmrecords ul,
+#lastfmrecords li          { margin: 0; padding: 0; list-style: none; }
+#lastfmrecords li          { float: left; margin: 0px 5px 5px 0px; border: 1px solid #999; padding: 2px; }
+#lastfmrecords a           { display: block; float: left; width: 100px; height: 100px; line-height: 100px; overflow: hidden; position: relative; z-index: 1; }
+#lastfmrecords a img       { float: left; position: absolute; margin: auto; min-height: 100px; }
+/* mouse over */
+#lastfmrecords a:hover     { overflow:visible; z-index:1000; border:none; }
+#lastfmrecords a:hover img { border: 1px  solid #999; background: #fff; padding: 3px; margin-top: -20px; margin-left: -20px; min-height: 120px;  }
+
+
 
 /* content
 ----------------------------------------------- */

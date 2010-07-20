@@ -15,6 +15,11 @@
 		<script src="public/scripts/<?= $file ?>.js" type="text/javascript" charset="utf-8"></script>
 		<? endforeach; ?>
 		
+		<script src="public/scripts/jquery.js" type="text/javascript" charset="utf-8" ></script>
+		<script src="public/scripts/last.fm.records.js" type="text/javascript" charset="utf-8" /></script>
+		
+		<script src="public/scripts/blog.js" type="text/javascript" charset="utf-8" /></script>
+		
 		<title>Coding Deck</title> 
 	</head>
 	<body>
@@ -47,18 +52,10 @@
 			</div>
 			
 			<div class="categories">
-				<h2>Categories</h2>
-
-				<ul>
-				<li><a href="http://germanson.bitacoras.com/categorias/cine">Cine</a> <span>(3)</span></li>
-				<li><a href="http://germanson.bitacoras.com/categorias/computacion">Computacion</a> <span>(21)</span></li>
-				<li><a href="http://germanson.bitacoras.com/categorias/escuela">Escuela</a> <span>(5)</span></li>
-				<li><a href="http://germanson.bitacoras.com/categorias/general">General</a> <span>(56)</span></li>
-
-				<li><a href="http://germanson.bitacoras.com/categorias/musica">Musica</a> <span>(27)</span></li>
-				<li><a href="http://germanson.bitacoras.com/categorias/poemas-y-pensamientos">Poemas y Pensamientos</a> <span>(33)</span></li>
-				</ul>
+				<h3>I have been listening to...</h3>
+				<div id="lastfmrecords"></div>
 			</div>
+					
 		</div>
 		
 		<div id="content">
