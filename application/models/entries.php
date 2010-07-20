@@ -37,7 +37,7 @@ class entries extends Model {
 		
 		$query->free_result();
 		
-		return $data;		
+		return $data;
 	}
 	
 	function getList() {
@@ -58,6 +58,18 @@ class entries extends Model {
 		$query->free_result();
 		
 		return $data;
+	}
+	
+	function saveEntry() {
+		date_default_timezone_set('America/Hermosillo');
+
+		$data["Title"] = $this->input->post("Title");
+		$data["Body"] = $this->input->post("Body");
+		$data["CreationDate"] = time(); //date("m/d/Y"); 
+		$data["LastUpdated"] = time(); //date("m/d/Y"); 
+		$data["Author"] = $this->input->post("Author");
+		
+		return $this->db->insert("entries", $data);
 	}
 
 }
