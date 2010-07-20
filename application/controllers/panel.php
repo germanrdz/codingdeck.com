@@ -12,6 +12,7 @@
 			$this->load->helper('form');
 			$this->load->library('form_validation');
 			$this->load->helper('date');
+			date_default_timezone_set('America/Hermosillo');
 			
 		}
 		

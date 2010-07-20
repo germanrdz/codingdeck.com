@@ -2,11 +2,11 @@
 
 class entries extends Model {
 
-	function selectAll() {
+	function selectAll($perpage, $page) {
 		$data = array();
 		
 		$this->db->order_by("Id", "desc"); 
-		$query = $this->db->get('entries');
+		$query = $this->db->get("entries", $perpage, $page);
 		
 		if ($query->num_rows() > 0)
 		{
@@ -61,7 +61,6 @@ class entries extends Model {
 	}
 	
 	function saveEntry() {
-		date_default_timezone_set('America/Hermosillo');
 
 		$data["Title"] = $this->input->post("Title");
 		$data["Body"] = $this->input->post("Body");

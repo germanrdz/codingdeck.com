@@ -11,6 +11,11 @@
 		</div>	
 	
 	<? endforeach ?>
+	
+	<div id="pagination">
+		<?= $this->pagination->create_links(); ?>
+	</div>
+	
 </div>
 
 <script type="text/javascript">
