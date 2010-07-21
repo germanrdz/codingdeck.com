@@ -21,6 +21,10 @@
 			// bussines logic
 			$view_data['model'] = $this->entries->getList();
 			$view_data['validation'] = true;
+			$view_data['successMsg'] = array(
+				"New entry successfully saved",
+				"Selected entry has been deleted"
+				);
 			
 			$view_data['success'] = $success;
 
@@ -58,6 +62,17 @@
 				$view_data["success"] = 0; 
 				$this->load->view('panel/index', $view_data);
 			}			
+		}
+		
+		function delete($id) {
+			
+			if ($this->db->delete('entries', array('id' => $id))) {
+				redirect('//panel/index/2', 'refresh');
+			}
+			else {
+				redirect('//panel/index/', 'refresh');
+			}
+			
 		}
 	
 	}

@@ -66,9 +66,11 @@
 					<?= form_close(); ?>
 				</div>
 			
-				<? if($success == 1) { ?>
+				<?
+					if($success > 0) {
+				?>
 					<div class="success">
-						New entry was successfully saved! 
+						<?= $successMsg[$success - 1]; ?>
 					</div>
 				<? } ?>
 			
