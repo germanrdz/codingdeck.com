@@ -60,7 +60,27 @@ h1 {
 	text-decoration: underline;
 }
 
+#header .user_login {
+	float: left;
+	height: 60px;
+	width: 600px;
+	padding-top: 20px;
+	font-weight: bold;
+	margin-left: 50px;
+}
 
+#header .user_login a {
+	color: #fff;
+}
+
+#header .user_login a:hover {
+	cursor: pointer;
+}
+
+#header .user_login img {
+	margin-right: 10px;
+	border: 1px solid #fff;
+}
 
 /* sidebar
 ----------------------------------------------- */

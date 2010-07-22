@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml"> 
 	<head> 
 		<base href="<?= base_url() ?>" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
@@ -23,7 +23,7 @@
 		<title>Coding Deck</title> 
 	</head>
 	<body>
-		
+				
 		<div id="header">
 			<div class="logo">
 				<h1>
@@ -37,8 +37,19 @@
 			<div class="navigation">
 				<?= anchor("blog", "Home"); ?>
 				<?= anchor("blog/about", "About"); ?>
-				<?= anchor("blog/contact", "Contact"); ?>
+				<?= anchor("blog/contact", "Contact"); ?>				
 			</div>
+			
+			<div class="user_login">
+				 <?php if ($login) { ?>
+					<img src="http://graph.facebook.com/<?= $user->id ?>/picture?type=square" align="left"/> 
+					<?= $user->name ?><br />
+					<a id="fb_logout">logout</a>
+				<?php } else { ?>
+					<fb:login-button></fb:login-button>
+				<?php } ?>
+				</div>
+			
 		</div>
 		
 		<div id="sidebar">
