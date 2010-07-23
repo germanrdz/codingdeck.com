@@ -7,3 +7,29 @@
 	margin: 10px 0;
 	text-align: center;
 }
+
+#blog #comments {
+	padding-top: 20px;
+}
+
+#blog #comments .avatar {
+	float: left;
+	padding-top: 10px;
+	padding-right: 10px;
+}
+
+#blog #form textarea {
+	padding: 2.5px;
+	margin-top: 10px;
+	font: normal 14px "Lucida Grande", arial, tahoma, sans-serif;
+}
+
+#blog .comment_empty {
+	color: gray;
+	height: 50px;
+}
+
+#blog .comment_filled {
+   color: black;
+   height: 130px;
+}

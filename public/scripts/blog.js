@@ -16,6 +16,25 @@ $(document).ready( function() {
 		FB.logout(function(response) {
 			location.reload(true);
 		})
-	}).hover("css", "cursor", "pointer");
-	
+	});
+
+
+
+	var submit = $("#submitComment");
+
+    $("#form textarea").blur(function() {
+        if ($(this).val() == "") {
+            $(this).val("Write a comment...")
+                   .removeClass("comment_filled")
+                   .addClass("comment_empty");
+            submit.hide();
+        }
+    }).focus(function() {
+        if ($(this).val() == "Write a comment...") {
+            $(this).val("")
+                   .removeClass("comment_empty")
+                   .addClass("comment_filled");
+            submit.show();
+        }
+    });
 });

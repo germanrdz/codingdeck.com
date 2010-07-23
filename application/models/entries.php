@@ -2,6 +2,25 @@
 
 class entries extends Model {
 
+	function getId($id) {
+		$data = array();
+		
+		$this->db->where("Id", $id); 
+		$query = $this->db->get("entries");
+		
+		if ($query->num_rows() > 0)
+		{
+			foreach($query->result() as $row)
+			{
+				$data[] = $row;
+			}
+		}
+		
+		$query->free_result();
+		
+		return $data;
+	}
+
 	function selectAll($perpage, $page) {
 		$data = array();
 		

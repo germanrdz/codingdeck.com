@@ -53,7 +53,6 @@ $autoload['libraries'] = array('database');
 
 $autoload['helper'] = array('html', 'url');
 
-
 /*
 | -------------------------------------------------------------------
 |  Auto-load Plugins

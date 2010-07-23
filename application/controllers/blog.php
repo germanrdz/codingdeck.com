@@ -22,10 +22,12 @@
 			
 			$facebook = $this->_get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
 			$include["login"] = $facebook;
+			$view_data['login'] = $facebook;
 			
 			if ($facebook)  {
 				$user = json_decode(file_get_contents('https://graph.facebook.com/me?access_token=' .$facebook['access_token']));
 				$include["user"] = $user;
+				$view_data['user'] = $user;
 			}
 
 			$config['base_url'] = base_url() . "index.php/blog/index/";
@@ -40,7 +42,7 @@
 			
 			// bussines logic
 			//$view_data['model'] = $this->entries->selectLast20();
-			$view_data['model'] = $this->entries->selectAll(5, $page);
+			$view_data['model'] = $this->entries->selectAll(5, $page);	
 			
 			// load view
 			$this->load->view('blog/index', $view_data);
@@ -51,7 +53,30 @@
 		
 		function comments($id)
 		{
-			echo "comments here " . $id;
+			$this->load->model('comments');
+			$this->load->helper('form');
+			
+			$facebook = $this->_get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);
+			$include["login"] = $facebook;
+			
+			if ($facebook)  {
+				$user = json_decode(file_get_contents('https://graph.facebook.com/me?access_token=' .$facebook['access_token']));
+				$include["user"] = $user;
+			}
+			
+			// load main header
+			$include["stylesheets"] = array("blog", "shCore", "shThemeDefault");
+			$include["scripts"] = array("shCore", "shBrushCSharp", "shBrushJScript");
+			$this->load->view('header', $include);	
+
+			$view_data['model'] = $this->entries->getId($id);
+			$view_data['comments'] = $this->comments->getComments($id);
+
+			// load view
+			$this->load->view('blog/post', $view_data);
+		
+			// load footer
+			$this->load->view('footer');
 		}
 		
 		function about()

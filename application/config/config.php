@@ -12,8 +12,8 @@
 |
 */
 //$config['base_url']	= "http://example.com/";
-//$config['base_url'] = "http://localhost/~GMac/codingdeck.com/";
-$config['base_url'] = "http://localhost/codingdeck.com/";
+$config['base_url'] = "http://localhost/~GMac/codingdeck.com/";
+//$config['base_url'] = "http://localhost/codingdeck.com/";
 
 /*
 |--------------------------------------------------------------------------
