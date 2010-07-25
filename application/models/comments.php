@@ -21,6 +21,16 @@ class comments extends Model {
 		return $data;
 	}
 	
+	function insert() {
+		$data["EntryId"] = $this->input->post("EntryId");
+		$data["AuthorName"] = $this->input->post("AuthorName");
+		$data["AuthorId"] = $this->input->post("AuthorId");
+		$data["Body"] = nl2br(strip_tags($this->input->post("Body"))); //date("m/d/Y"); 
+		$data["Date"] = time(); //date("m/d/Y"); 
+		
+		return $this->db->insert("comments", $data);
+	}
+	
 }
 
 ?>

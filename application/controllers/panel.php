@@ -33,10 +33,7 @@
 			$this->load->view('panel/index', $view_data);
 		}
 		
-		function create() {
-			// bussines logic
-			$view_data['model'] = $this->entries->getList();
-			
+		function create() {			
 			// validation rules
 			$this->form_validation->set_rules('Title', 'Title', 'required');
 			$this->form_validation->set_rules('Body', 'Body', 'required');
@@ -54,6 +51,9 @@
 				}
 				else {
 					$view_data["success"] = 0;
+					// bussines logic
+					$view_data['model'] = $this->entries->getList();
+					
 					$this->load->view('panel/index', $view_data);
 				}
 				

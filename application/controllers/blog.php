@@ -51,7 +51,7 @@
 			$this->load->view('footer');
 		}
 		
-		function comments($id)
+		function post($id)
 		{
 			$this->load->model('comments');
 			$this->load->helper('form');
@@ -79,14 +79,26 @@
 			$this->load->view('footer');
 		}
 		
+		function saveComment() {
+			$this->load->model('comments');
+			
+			$id = $this->input->post("EntryId");
+			
+			$this->comments->insert();	
+			
+			redirect('//blog/post/' . $id, 'refresh');
+		}
+		
 		function about()
 		{
-			echo "about me";
+			//echo "about me";
+			redirect('http://www.germanrodriguez.com.mx');
 		}
 		
 		function contact()
 		{
-			echo "contact me";
+			//echo "contact me";
+			redirect('http://www.germanrodriguez.com.mx');
 		}
 		
 		function _get_facebook_cookie($app_id, $application_secret) {

@@ -80,7 +80,6 @@ class entries extends Model {
 	}
 	
 	function saveEntry() {
-
 		$data["Title"] = $this->input->post("Title");
 		$data["Body"] = $this->input->post("Body");
 		$data["CreationDate"] = time(); //date("m/d/Y"); 

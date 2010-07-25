@@ -1,7 +1,7 @@
 <div id="blog">
 	<? foreach($model as $entry): ?>
 	
-		<h1><?= anchor("blog/comments/" . $entry->Id, $entry->Title); ?></h1>	
+		<h1><?= anchor("blog/post/" . $entry->Id, $entry->Title); ?></h1>	
 		<div class="post_footer">
 			posted by: <b><?= $entry->Author ?></b> on <?= unix_to_human($entry->LastUpdated); ?>
 		</div>	

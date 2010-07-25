@@ -17,8 +17,10 @@
 	
 	<? if (isset($user)) : ?>
 		<div id="form" style="overflow: hidden">
-			<?= form_open('panel/create'); ?>
-			<?= form_hidden('PostId', $model[0]->Id); ?>
+			<?= form_open('blog/saveComment'); ?>
+			<?= form_hidden('EntryId', $model[0]->Id); ?>
+			<?= form_hidden('AuthorName', $user->name); ?>
+			<?= form_hidden('AuthorId', $user->id); ?>
 		
 			<div style="float: left; padding-top: 30px; padding-right: 10px;">
 				<img src="http://graph.facebook.com/<?= $user->id ?>/picture?type=square" align="left"/> 
@@ -45,14 +47,16 @@
 
 		<? if (count($comments) > 0) : ?>
 			<? foreach ($comments as $comment) : ?>
-				<p class="comment">
+				<div class="comment">
 					<div class="avatar">
 						<img src="http://graph.facebook.com/<?= $comment->AuthorId ?>/picture?type=square" align="left"/> 
 					</div>
-					<small><?= unix_to_human($comment->Date); ?></small> <br/>
-					<b><?= $comment->AuthorName ?></b> said: <br /><br />
-					<?= $comment->Body ?>
-				<p>
+					<div class="body">
+						<small><?= unix_to_human($comment->Date); ?></small> <br/>
+						<b><?= $comment->AuthorName ?></b> said: <br />
+						<?= $comment->Body ?>
+					</div>
+				</div>
 			<? endforeach; ?>
 		<? else : ?>
 			No comments had been made.
