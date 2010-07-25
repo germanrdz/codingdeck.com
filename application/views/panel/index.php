@@ -86,7 +86,7 @@
 					<? foreach($model as $entry): ?>
 						<tr>
 							<td><?= $entry->Id ?></td>
-							<td><?= anchor("blog/comments/" . $entry->Id, $entry->Title); ?></td>
+							<td><?= anchor("blog/post/" . $entry->Id, $entry->Title); ?></td>
 							<td><?= $entry->Author ?></td>
 							<td><?= unix_to_human($entry->LastUpdated); ?></td>
 							<td>

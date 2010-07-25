@@ -10,6 +10,7 @@
 			//$this->load->scaffolding('entries');
 			$this->load->model('entries');
 			$this->load->helper('date');
+			
 			date_default_timezone_set('America/Hermosillo');
 			
 			define('FACEBOOK_APP_ID', '111858858866466');
@@ -24,12 +25,14 @@
 			$include["login"] = $facebook;
 			$view_data['login'] = $facebook;
 			
+			// if facebook access is granted, ask for user information
 			if ($facebook)  {
 				$user = json_decode(file_get_contents('https://graph.facebook.com/me?access_token=' .$facebook['access_token']));
 				$include["user"] = $user;
 				$view_data['user'] = $user;
 			}
 
+			// configuring pagination
 			$config['base_url'] = base_url() . "index.php/blog/index/";
 			$config['total_rows'] = $this->db->count_all('entries');
 			$config['per_page'] = '5';
@@ -40,8 +43,7 @@
 			$include["scripts"] = array("shCore", "shBrushCSharp", "shBrushJScript");
 			$this->load->view('header', $include);
 			
-			// bussines logic
-			//$view_data['model'] = $this->entries->selectLast20();
+			// bussines logic 
 			$view_data['model'] = $this->entries->selectAll(5, $page);	
 			
 			// load view
@@ -51,6 +53,7 @@
 			$this->load->view('footer');
 		}
 		
+		// single post view with comments loaded.
 		function post($id)
 		{
 			$this->load->model('comments');
@@ -84,7 +87,7 @@
 			
 			$id = $this->input->post("EntryId");
 			
-			$this->comments->insert();	
+			$this->comments->insert();
 			
 			redirect('//blog/post/' . $id, 'refresh');
 		}

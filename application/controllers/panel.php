@@ -15,6 +15,26 @@
 			
 			date_default_timezone_set('America/Hermosillo');
 			
+			// allowing only German Rodriguez from Facebook
+			define('FACEBOOK_APP_ID', '111858858866466');
+			define('FACEBOOK_SECRET', '49a2adf64b488642ed1f0b530bf829b2');
+			define('GERMANRODRIGUEZ_USERID', '757216207');
+			
+			$facebook = $this->_get_facebook_cookie(FACEBOOK_APP_ID, FACEBOOK_SECRET);		
+			$access = FALSE;	
+			
+			if ($facebook)  {
+				$user = json_decode(file_get_contents('https://graph.facebook.com/me?access_token=' .$facebook['access_token']));
+				if ($user->id == GERMANRODRIGUEZ_USERID) {
+					$access = TRUE;
+				}
+			}
+			
+			if (!$access) {
+				redirect('//blog/index', 'refresh');
+			}
+					
+			
 		}
 		
 		function index($success = 0)
@@ -75,6 +95,31 @@
 			}
 			
 		}
+	
+		function _get_facebook_cookie($app_id, $application_secret) {
+			
+			if (isset($_COOKIE['fbs_' . $app_id])) {			
+				$args = array();
+				parse_str(trim($_COOKIE['fbs_' . $app_id], '\\"'), $args);
+				ksort($args);
+				$payload = '';
+				
+				foreach ($args as $key => $value) {
+					if ($key != 'sig') {
+						$payload .= $key . '=' . $value;
+					}
+				}
+				
+				if (md5($payload . $application_secret) != $args['sig']) {
+					return null;
+				}
+				
+				return $args;
+			}
+			
+			return null;
+		}
+	
 	
 	}
 	
