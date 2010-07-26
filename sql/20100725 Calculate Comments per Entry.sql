@@ -1,0 +1,1 @@
+UPDATE entries SET Comments = (SELECT COUNT(*) FROM comments WHERE EntryId = entries.Id)

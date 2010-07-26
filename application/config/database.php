@@ -51,5 +51,7 @@ $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
 
 
+
+
 /* End of file database.php */
 /* Location: ./system/application/config/database.php */

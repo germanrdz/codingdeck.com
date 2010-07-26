@@ -3,7 +3,8 @@
 	
 		<h1><?= anchor("blog/post/" . $entry->Id, $entry->Title); ?></h1>	
 		<div class="post_footer">
-			posted by: <b><?= $entry->Author ?></b> on <?= unix_to_human($entry->LastUpdated); ?>
+			posted by: <b><?= $entry->Author ?></b> on <?= unix_to_human($entry->LastUpdated); ?> |
+			<?= anchor("blog/post/". $entry->Id, "(" . $entry->Comments . ") Comments"); ?>
 		</div>	
 		
 		<div class="post_body">
