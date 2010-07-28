@@ -1,4 +1,7 @@
 <div id="blog">
+	
+	<? if ($model) : ?>
+	
 	<? foreach($model as $entry): ?>
 	
 		<h1><a href="javascript:;"><?= $entry->Title ?></a></h1>	
@@ -61,9 +64,12 @@
 		<? else : ?>
 			No comments had been made.
 		<? endif; ?>
-
-	
 	</div>
+	
+	<? else: ?>
+		No post found
+	<? endif; ?>
+	
 </div>
 
 <script type="text/javascript">

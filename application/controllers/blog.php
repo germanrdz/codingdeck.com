@@ -88,6 +88,7 @@
 			$id = $this->input->post("EntryId");
 			
 			$this->comments->insert();
+			$this->entries->incrementComments();
 			
 			redirect('//blog/post/' . $id, 'refresh');
 		}

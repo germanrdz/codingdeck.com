@@ -27,6 +27,7 @@ $config['base_url'] = "http://localhost/~GMac/codingdeck.com/";
 |
 */
 $config['index_page'] = "index.php";
+//$config['index_page'] = "";
 
 /*
 |--------------------------------------------------------------------------

@@ -88,6 +88,14 @@ class entries extends Model {
 		
 		return $this->db->insert("entries", $data);
 	}
+	
+	function incrementComments() {
+		$id = $this->input->post("EntryId");
+		
+		$this->db->set('Comments', 'Comments+1', FALSE);
+		$this->db->where('id', $id);
+		$this->db->update("entries");
+	}
 
 }
 
