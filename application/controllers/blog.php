@@ -96,13 +96,13 @@
 		function about()
 		{
 			//echo "about me";
-			redirect('http://www.germanrodriguez.com.mx');
+			redirect('http://www.germanrdz.com');
 		}
 		
 		function contact()
 		{
 			//echo "contact me";
-			redirect('http://www.germanrodriguez.com.mx');
+			redirect('http://www.germanrdz.com');
 		}
 		
 		function _get_facebook_cookie($app_id, $application_secret) {
