@@ -42,7 +42,7 @@
 			<div class="logo">
 				<h1>
 					<a href="http://www.codingdeck.com">
-						<span>Coding Desk</span>
+						<span>Coding Deck</span>
 					</a>
 				</h1>
 				The fabulous life of a developer
